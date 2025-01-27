@@ -1,0 +1,22 @@
+.partner-logo{
+    --gridColumnCount:2;
+    --gridRowGap:60px;
+    display:grid;
+    grid:auto/repeat(var(--gridColumnCount),1fr);
+    justify-items:center;
+    align-items:center;
+    row-gap:var(--gridRowGap)
+}
+@media (min-width:672px){
+    .partner-logo{
+        --gridColumnCount:4
+    }
+    .partner-logo--variantHalf{
+        --gridColumnCount:2
+    }
+}
+@media (max-width:672px) and (min-width:600px){
+    .partner-logo--variantHalf>svg{
+        --userLogoMaxWidth:142px
+    }
+}

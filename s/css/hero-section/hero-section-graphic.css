@@ -1,0 +1,21 @@
+.financial-metrics{
+    position:relative;
+    z-index:2
+}
+.phone-model.phone-graphic{
+    --phoneWidth:270px;
+    --phoneHeight:536px;
+    position:relative;
+    margin-top:60px;
+    left:140px
+}
+.dashboard{
+    position:absolute;
+    top:0;
+    left:253px
+}
+
+.partners-logo .section-layout{
+    --sectionPaddingTop:0
+}
+

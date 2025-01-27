@@ -1,0 +1,93 @@
+.hero-section-header{
+    --titleFontMin:50;
+    --titleFontMax:78;
+    --viewportMin:var(--viewportWidthSmall);
+    --viewportMax:var(--viewportWidthMedium);
+    --titleFontSize:calc(var(--titleFontMin)*1px + (var(--titleFontMax) - var(--titleFontMin))*(var(--windowWidth) - var(--viewportMin)*1px)/(var(--viewportMax) - var(--viewportMin)));
+    ;
+    --titleLineHeight:1.04;
+    --titleLetterSpacing:-0.04em;
+    --titleWeight:var(--fontWeightBold);
+    --titleFont:var(--titleWeight) var(--titleFontSize)/var(--titleLineHeight) var(--fontFamily);
+    --headerMarginTop:100px;
+    --headerPadding:0 var(--headerPaddingRight) 0 var(--headerPaddingLeft);
+    --captionHeight:25px;
+    --captionTitleGap:48px;
+    --captionTitleGapSmall:32px;
+    --captionMarginTop:calc(var(--headerMarginTop) - var(--captionHeight) - var(--captionTitleGap));
+    position:relative;
+    min-width:0;
+    padding:var(--headerPadding)
+}
+@media (min-width:600px){
+    .hero-section-header{
+        --headerPaddingRight:var(--columnPaddingNone);
+        --titleFontMin:60;
+        --titleFontMax:94;
+        --viewportMin:var(--viewportWidthMedium);
+        --viewportMax:var(--viewportWidthLarge)
+    }
+}
+.hero-section-header__caption{
+    margin-top:var(--captionMarginTop)
+}
+@media (min-width:600px){
+    .hero-section-header__caption{
+        min-width:calc(100% + 100px)
+    }
+}
+@media (min-width:900px){
+    .hero-section-header__caption{
+        margin-top:0
+    }
+}
+.hero-header-title{
+    margin-top:var(--headerMarginTop);
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    font:var(--titleFont);
+    color:#bdc6d2;
+    letter-spacing:var(--titleLetterSpacing,inherit)
+}
+.hero-section-header--hasCaption .hero-header-title{
+    margin-top:var(--captionTitleGapSmall)
+}
+@media (min-width:600px){
+    .hero-header-title{
+        min-width:calc(100% + 90px);
+        min-height:200px
+    }
+}
+
+.hero-header-title--overlay{
+    position:absolute;
+    left:0;
+    bottom:0;
+    padding:var(--headerPadding);
+    z-index:2;
+    color:#3a3a3a;
+    opacity:.3
+}
+.hero-header-title--burn{
+    mix-blend-mode:color-burn;
+    opacity:1
+}
+@media (min-width:1112px){
+    .hero-header-title--scaled{
+        font-size:clamp(4.75rem,9.9vh,5.875rem)
+    }
+    @media (max-height:937px){
+        .hero-header-title--scaled{
+            min-width:auto
+        }
+    }
+    @media (max-height:800px){
+        .hero-header-title--scaled{
+            padding-right:22px
+        }
+    }
+    .Copy .variant--Superhero:has(.hero-header-title--scaled){
+        --rowGap:clamp(1.5rem,3.28vh,2rem)
+    }
+}

@@ -1,0 +1,203 @@
+.phone-graphic{
+    --phoneBorderRadius:36px;
+    --phoneScreenBorderRadius:29px;
+    --phoneWidth:264px;
+    --phoneHeight:533px;
+    --phone-graphicShadow:0 50px 100px -20px rgba(50,50,93,0.25),0 30px 60px -30px rgba(0,0,0,0.3),inset 0 -2px 6px 0 rgba(10,37,64,0.35);
+    width:var(--phoneWidth);
+    height:var(--phoneHeight);
+    padding:8px;
+    border-radius:var(--phoneBorderRadius);
+    background:#f6f9fc;
+    box-shadow:var(--phone-graphicShadow);
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    user-select:none;
+    font-size:16px
+}
+
+.HubPage .phone-graphic{
+    --phone-graphicShadow:0px 20px 39px -20px rgba(0,0,0,0.3),0px 32px 66px -13px rgba(50,50,93,0.25),0px -1px 3px 0px rgba(10,37,64,0.35) inset
+}
+.phone-graphic--scaleLarge{
+    --phoneWidth:301px;
+    --phoneHeight:615px;
+    border-radius:42px
+}
+.phone-screen{
+    position:relative;
+    height:100%;
+    border-radius:var(--phoneScreenBorderRadius);
+    -webkit-mask-image:-webkit-radial-gradient(#fff,#000);
+    background:#fff
+}
+
+.payment-form{
+    --checkoutPhoneVerticalPadding:5px;
+    --checkoutPhoneInputMinHeight:24px;
+    --checkoutPhoneFontSize:11px;
+    --checkoutPhoneContainerPaddingVertical:24px;
+    --checkoutPhoneContainerPaddingHorizontal:16px;
+    --checkoutPhoneBackToArrowHeight:8px;
+    --checkoutPhonePayButtonColor:#0a2540
+}
+html[lang*=ja] .payment-form{
+    --checkoutPhoneFontSize:10px
+}
+.payment-form{
+    height:100%;
+    padding:var(--checkoutPhoneContainerPaddingVertical) var(--checkoutPhoneContainerPaddingHorizontal);
+    border-radius:28px;
+    background:#fff;
+    font-size:var(--checkoutPhoneFontSize);
+    font-weight:var(--fontWeightNormal);
+    letter-spacing:.2px
+}
+.payment-form--scaleLarge{
+    --checkoutPhoneVerticalPadding:8px;
+    --checkoutPhoneInputMinHeight:28px;
+    --checkoutPhoneFontSize:13px;
+    --checkoutPhoneBackToArrowHeight:10px
+}
+.payment-form--scaleLarge .payment-form__applePay{
+    height:16px
+}
+.payment-form--logo{
+    padding-top:0
+}
+.payment-form__backTo{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    margin:-10px 0 20px
+}
+.payment-form__backToArrow{
+    margin-right:var(--checkoutPhoneBackToArrowHeight);
+    height:var(--checkoutPhoneBackToArrowHeight);
+    width:auto
+}
+.payment-form__backTo+.payment-form__image{
+    margin-top:20px;
+    height:60px
+}
+.payment-form__logo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:60px
+}
+.payment-form__image{
+    display:flex;
+    justify-content:center;
+    height:80px
+}
+.payment-form__image .Picture{
+    border-radius:4px;
+    overflow:hidden
+}
+.payment-form__description{
+    margin-top:15px;
+    text-align:center;
+    color:#0a2540;
+    font-weight:var(--fontWeightSemibold)
+}
+.payment-form__price{
+    margin:2px 0 16px;
+    text-align:center
+}
+.payment-form__button{
+    border-radius:4px;
+    padding:var(--checkoutPhoneVerticalPadding) 0;
+    text-align:center;
+    font-weight:var(--fontWeightSemibold);
+    color:#fff;
+    background:var(--checkoutPhonePayButtonColor);
+    box-shadow:0 2px 4px -1px rgba(50,50,93,.25),0 1px 3px -1px rgba(0,0,0,.3)
+}
+.payment-form__buttonsContainer{
+    display:flex;
+    flex-direction:column;
+    gap:8px
+}
+.payment-form__button{
+    display:grid;
+    place-items:center
+}
+.payment-form__linkButton{
+    background-color:#00d66f
+}
+.payment-form__applePay{
+    display:block;
+    height:14px;
+    margin:0 auto
+}
+.payment-form__separator{
+    margin:16px 0 12px;
+    text-align:center;
+    background:linear-gradient(#e6ebf1,#e6ebf1) no-repeat 0 50%/100% 1px
+}
+.payment-form__separatorTitle{
+    display:inline;
+    padding:0 6px;
+    background:#fff
+}
+.payment-form__input{
+    min-height:var(--checkoutPhoneInputMinHeight);
+    line-height:var(--checkoutPhoneInputMinHeight);
+    margin:6px 0 16px;
+    color:#62788d;
+    border-radius:4px;
+    box-shadow:0 0 0 1px rgba(50,50,93,.07),0 2px 3px -1px rgba(50,50,93,.12),0 1px 3px -1px rgba(0,0,0,.12)
+}
+.payment-form__input input {
+    width: 100%;
+    min-height:var(--checkoutPhoneInputMinHeight);
+    border: none;
+}
+.payment-form__input--card{
+    display:grid;
+    grid:auto/repeat(2,1fr)
+}
+
+.payment-form__input--card input{
+    font-size: 13px;
+}
+.payment-form__placeholder{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-auto-flow:column;
+    padding-left:8px
+}
+.payment-form__placeholder--number{
+    gap:0 6px;
+    grid-area:auto/span 2;
+    align-items:center;
+    padding-right:6px;
+    border-bottom:1px solid #e6ebf1
+}
+.payment-form__placeholder--cvc{
+    padding-right:4px;
+    border-left:1px solid #e6ebf1;
+    white-space:nowrap
+}
+.payment-form__cvcIcon{
+    margin:4px 0 0 4px
+}
+.payment-form__input--country{
+    margin-bottom:24px
+}
+.payment-form__placeholder--country{
+    min-height:var(--checkoutPhoneInputMinHeight);
+    align-items:center;
+    padding-right:9px;
+    border-bottom:1px solid #e6ebf1
+}
+
+.payment-form__placeholder--country select {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #62788d;
+}
+

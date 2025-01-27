@@ -1,0 +1,22 @@
+.hero-sectionGradient{
+    --gradientAngle:var(--angleStrong);
+    --gradientHeight:calc(100% + var(--sectionPaddingTop) + var(--transformOriginX)*var(--sectionAngleSin));
+    --offsetX:var(--gutterWidth);
+    --transformOriginX:-60px;
+    --sectionAngleSin:var(--angleStrongSin);
+    position:absolute;
+    bottom:0;
+    top:auto;
+    left:calc(var(--offsetX)*-1);
+    width:var(--windowWidth);
+    height:var(--gradientHeight);
+    transform-origin:var(--transformOriginX) 100%;
+    transform:skewY(var(--gradientAngle));
+    overflow:hidden;
+    border:none
+}
+@media (min-width:600px){
+    .hero-sectionGradient{
+        --transformOriginX:calc(var(--gutterWidth)*0.8)
+    }
+}
